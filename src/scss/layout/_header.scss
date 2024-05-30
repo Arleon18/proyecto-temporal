@@ -1,0 +1,157 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    height: 17rem;
+    background-color: v.$grisOscuro;
+    padding: 3rem 0;
+    width: 100%;
+    transition: height 0.1s linear;
+
+    &.inicio.nav-activa{
+        height: 50rem;
+    }
+
+    &.nav-activa{
+        height: 36rem;  
+    }
+
+    @include m.telefono {
+        height: 22rem;
+
+        &.nav-activa{
+            height: 40rem;  
+        }
+    }
+
+    @include m.tablet {
+        height: 17rem;
+    }
+
+    &.inicio{
+        background-image: url('/build/img/header.webp');
+        background-position: center center;
+        background-size: cover;
+        height: 40rem;  
+        @include m.tablet {
+            height: 60rem;
+        }
+    }
+    
+    &__contenido{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        @include m.tablet {
+            align-items: center;
+        }
+    }
+    
+    .logo{
+        @include m.tablet {
+            width: 35rem;
+        }
+    }
+}
+
+.barras{
+    display: block;
+    margin-top: 1rem;
+    height: 4rem;
+
+    @include m.tablet {
+        display: none;
+        height: 4rem;
+    }
+    
+    &:hover{
+        cursor:pointer
+    }
+}
+
+.navegacion{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: visibility, opacity 0.3s ease-in-out;
+
+    @include m.tablet {
+        visibility: visible;
+        flex-direction: row;
+        gap: 5rem;
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        opacity: 1;
+    }
+    
+    a{
+        color: v.$blanco;
+    }
+    
+    :hover{
+        color: v.$verde;
+    }
+
+    &.nav-activa{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+.header__subtitulos{
+    margin-top: -7rem;
+    transition: margin-top 0.1s linear;
+    
+    &.nav-activa{
+        margin-top: 2rem;
+    }
+
+    @include m.tablet {
+        margin-top: 30rem;
+    }
+
+    .header__subtitulo{
+        color: v.$blanco;
+        text-align: left;
+        font-weight: 700;
+        margin: 0;
+        font-size: 2.5rem;
+
+        &:nth-child(2){
+            font-size: 2rem;
+        }
+
+        @include m.tablet {
+            font-size: 4rem;
+
+            &:nth-child(2){
+                font-size: 3.5rem;
+            }
+        }
+    }  
+}
+
+.dark-mode-boton{
+    height: 3rem;
+    position: relative;
+    right: 0;
+    width: auto;
+    filter: invert(1);
+    top: -0.1rem;
+    cursor: pointer;
+
+    @include m.tablet {
+        position: absolute;
+        height: 5rem;
+    }
+
+    &:hover{
+        filter: invert(0.5);
+       
+    }
+}

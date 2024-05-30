@@ -1,0 +1,33 @@
+@use 'base/mixins' as m;
+
+.titulo-m-s-nosotros{
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.m-s-nosotros{
+    @include m.tablet{
+        @include m.grid(3, 5rem);
+        margin-top: 3rem;
+    }
+}
+
+.m-s-nosotros__article{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 7rem;
+
+    h3{
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+
+    @include m.tablet {
+        margin-top: 0;
+    }
+
+    img{
+        height: 10rem;
+    }
+}

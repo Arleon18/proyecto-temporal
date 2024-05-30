@@ -1,0 +1,71 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.propiedades__contenido{
+    @include m.tablet {
+        @include m.grid(3, 2rem);
+    }
+}
+
+.propiedades__propiedad{
+    background-color: lighten(v.$gris, 5);
+    border: darken(v.$gris, 10) solid 0.15rem;
+    margin-top: 3rem;
+
+    @include m.tablet {
+        margin-top: 0;
+    }
+}
+
+.propiedades__info{
+
+    padding: 2rem;
+
+    h3, p{
+        margin: 0;
+    }
+
+    img{
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .propiedades__precio{
+        color: v.$verde;
+        font-size: 3.3rem;
+        font-weight: 700;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        p{
+            font-weight: 900;
+        }
+    }
+
+    a{
+        display: block;
+        @include m.boton(v.$amarillo);
+    }
+}
+
+.propiedades__boton-ver-todas{
+    text-align: right;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+
+    a{
+        @include m.boton(v.$verde);
+    }
+} 

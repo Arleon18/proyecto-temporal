@@ -1,0 +1,39 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenido {
+    width: 95%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.boton{
+    @include m.boton(v.$verde);
+}
+
+.boton-naranja-block{
+    @include m.boton(v.$amarillo, block);
+}
+
+.boton-rojo-block{
+    @include m.boton(v.$rojo, block);
+}
+
+.imagen-peque{
+    width: 25rem;
+}
+
+.contenedor-boton-login{
+    display: flex;
+    justify-content: center;
+
+    button{
+        font-size: 1.5rem;
+    }
+}

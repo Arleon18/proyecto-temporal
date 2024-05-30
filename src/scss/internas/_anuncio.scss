@@ -1,0 +1,17 @@
+@use 'base/mixins' as m;
+
+.propiedades__info{
+    &.anuncio{
+        ul{
+            width: 50%;
+            flex-direction: column;
+            row-gap: 1rem;
+            margin-bottom: 2rem;
+
+            @include m.telefono {
+                flex-direction: row;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+}

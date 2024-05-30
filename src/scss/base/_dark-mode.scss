@@ -1,0 +1,38 @@
+@use 'base/variables' as v;
+
+.dark-mode{
+    background-color: darken(v.$grisOscuro, 10);
+
+    p, label{
+        color: v.$blanco;
+    }
+
+    a, h1, h2, h3, h4, legend{
+        color: v.$gris;
+    }
+    
+    .propiedades__propiedad{
+        background-color: v.$grisOscuro;
+        border: none;
+
+        .propiedades__info{
+            img{
+                filter: invert(1);
+            } 
+        } 
+    }
+
+    .anuncio{
+        img{
+            filter: invert(1);
+        }
+    }
+
+    .formulario{
+        textarea, select, input:not([type='radio']){
+            background-color: v.$grisOscuro;
+            color: v.$blanco;
+            border: 1px solid v.$grisOscuro;
+        }
+    }
+}

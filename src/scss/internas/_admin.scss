@@ -1,0 +1,74 @@
+@use 'base/variables' as v;
+
+.alerta{
+    padding: 0.5rem;
+    text-align: justify;
+    color: v.$blanco;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    &.error{
+        background-color: v.$rojo;  
+    }
+    
+    &.satisfactoria{
+        background-color: v.$verde;
+        padding: 1rem;
+    }
+}
+
+.cont-boton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+table.propiedades{
+    margin-top: 4rem;
+    width: 100%;
+    // border-spacing: 0;
+    text-align: center;
+
+    thead{
+        th{
+            background-color: v.$verde;
+            color: v.$blanco;
+            padding: 2rem;
+        }
+    }
+
+    .acciones{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        a{
+            width: 90%;
+        }
+    }
+
+    td{
+        background-color: lighten(v.$verde, 60);
+        height: 17rem;
+    }
+
+    .imagen-tabla{
+        width: 15rem;
+        margin: 0 auto;
+    }
+}
+
+//Boton Eliminar
+
+.eliminar{
+    width: 90%;
+    height: 1rem;
+
+    input{
+        height: 4rem;
+    }
+}

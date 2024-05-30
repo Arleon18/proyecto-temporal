@@ -1,0 +1,17 @@
+@use 'base/mixins' as m;
+
+.nosotros{
+    @include m.grid(1, 2rem);
+
+    h4, p{
+        margin-top: 0;
+    }
+
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+
+        h4, p{
+            margin-top: 4rem;
+        }
+    }
+}

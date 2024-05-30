@@ -1,0 +1,61 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario{
+    fieldset{
+        margin-bottom: 2rem;
+
+        legend{
+            font-size: 1.9rem;
+        }
+
+        label{
+            display: block;
+            text-transform: uppercase;
+            font-weight: 700
+        }
+
+        input:not([type='radio']), textarea, select{
+            width: 100%;
+            padding: 1.3rem;
+            border: solid 0.15rem v.$gris;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        textarea{
+            resize: vertical;
+            height: 15rem;
+        }
+
+        .como-ser-contactado{
+            display: flex;
+            justify-content: space-between;
+            max-width: 30rem;
+        }
+
+        p{
+            font-size: 1.4rem;
+            margin: 2rem 0 0 0;
+        }
+    }
+    button{
+        @include m.boton(v.$verde);
+        width: 100%;
+        cursor: pointer;
+        
+        @include m.tablet {
+            width: 13rem;
+        }
+
+        &.boton-propiedad{
+            @include m.tablet {
+                display: block;
+                width: 20rem;
+            }
+        }
+    }
+}
+
+
+

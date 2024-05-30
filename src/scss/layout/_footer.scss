@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer{
+    background-color: v.$grisOscuro;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+
+    @include m.tablet {
+        height: 16rem;
+    }
+
+    p{
+        text-align: center;
+        color: v.$blanco;
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
+
+    .navegacion{
+        visibility: visible;
+        opacity: 1;
+    }
+
+}
