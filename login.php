@@ -19,7 +19,7 @@
 
         if(empty($errores)){
             //Revisar si el usuario existe
-            $query = "SELECT * FROM usuarios WHERE email = '$email';";
+            $query = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1;";
             $resultado = mysqli_query($db, $query);
 
             if($resultado -> num_rows){
@@ -27,15 +27,20 @@
                 $usuario = mysqli_fetch_assoc($resultado);
 
                 //Verificar si el password es correcto o no
-
-                $auth = password_verify($password, $usuario['password']);
+                if($email == 'correo@correo.com')
+                    $auth = password_verify($password, $usuario['password']);
+                else $auth = ($usuario['password'] == $password);
+                
                 if($auth){
                     session_start();
                     
                     $_SESSION['usuario'] = $usuario['email'];
                     $_SESSION['login'] = true;
 
-                    header('Location: /admin');
+                    if($email == 'correo@correo.com')
+                        header('Location: /admin');
+                    else
+                        header('Location: /');
 
                 }else{
                     $errores[] = 'La contraseña es incorrecta.';
@@ -61,7 +66,6 @@
         <form class="formulario" method="POST">
             <fieldset>
                 <legend>Información Personal</legend>
-
                 <label for="email">E-mail</label>
                 <input name="email" id="email" type="email" placeholder="Tu Email" required>
                 <label for="password">Password</label>
@@ -69,6 +73,7 @@
 
                 <div class="contenedor-boton-login">
                     <button type="submit" class="boton">Iniciar Sesión</button>
+                    <a href="./registro.php">¿No tienes cuenta? Click Aquí</a>
                 </div>
             </fieldset>
         </form>

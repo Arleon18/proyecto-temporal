@@ -32,8 +32,10 @@
 .contenedor-boton-login{
     display: flex;
     justify-content: center;
+    display: block;
 
     button{
         font-size: 1.5rem;
+        display: block;
     }
 }

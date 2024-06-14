@@ -3,7 +3,7 @@
     incluirTemplate('header');
 
     $auth = estaAutenticado();
-
+    // Hola sexoooo
     echo $auth;
     
     if(!$auth){

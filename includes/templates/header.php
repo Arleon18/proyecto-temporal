@@ -26,8 +26,14 @@
                 <a href="/anuncios.php">Anuncios</a>
                 <a href="/blog.php">Blog</a>
                 <a href="/contacto.php">Contacto</a>
+
+                <?php if($_SESSION['usuario'] == 'correo@correo.com'):?>
+                    <a href="/admin">Modificar</a>
+                <?php endif;?>
                 <?php if($auth):?>
                     <a href="/cerrar-sesion.php">Cerrar Sesión</a>
+                <?php else:?>
+                    <a href="/login.php">Iniciar Sesión</a>
                 <?php endif;?>
                 <img class="dark-mode-boton" src="/build/img/dark-mode.svg" alt="Logo Dark Mode">
             </nav>
